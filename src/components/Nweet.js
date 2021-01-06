@@ -44,18 +44,18 @@ const Nweet = ({ nweetObj, isOwner }) => {
                     <button onClick={toggleEditing}>Cancel</button>
                 </>
             ) : (
-                    <>
-                        <h4>{nweetObj.text}</h4>
-                        {isOwner && (
-                            <>
-                                <button onClick={onDeleteClick}>Delete Nweet</button>
-                                <button onClick={toggleEditing}>Edit Nweet</button>
-                            </>
-                        )}
-                    </>
+                <>
+                    <h4>{nweetObj.text}</h4>
+                    {isOwner && (
+                        <>
+                            <button onClick={onDeleteClick}>Delete Nweet</button>
+                            <button onClick={toggleEditing}>Edit Nweet</button>
+                        </>
+                    )}
+                </>
                 )}
         </div>
-    )
+    );
 };
 
 export default Nweet;
