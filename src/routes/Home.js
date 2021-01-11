@@ -19,7 +19,7 @@ const Home = ({ userObj }) => {
     const onSubmit = async (event) => {
         event.preventDefault();
         let attachmentUrl = "";
-        if (attachment != "") {
+        if (attachment !== "") {
             const attachmentRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
             const response = await attachmentRef.putString(attachment, "data_url");
             attachmentUrl = await response.ref.getDownloadURL();
@@ -42,13 +42,13 @@ const Home = ({ userObj }) => {
     };
     const onFileChange = (event) => {
         const {
-            target: {files},
+            target: { files },
         } = event;
         const theFile = files[0];
         const reader = new FileReader();
         reader.onloadend = (finishedEvent) => {
             const {
-                currentTarget: {result},
+                currentTarget: { result },
             } = finishedEvent;
             setAttachment(result);
         };
